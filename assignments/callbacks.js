@@ -40,7 +40,7 @@ last(items, function(last) {
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-  cb(x + y);
+  return cb(x + y);
 }
 sumNums(items.length, items.length, function(sum) {
   console.log(`The sum of the array's length and itself is ${sum}.`);
@@ -48,7 +48,7 @@ sumNums(items.length, items.length, function(sum) {
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
-  cb(x * y);
+  return cb(x * y);
 }
 multiplyNums(items.length, items.length, function(product) {
   console.log(`The square of the array's length is ${product}.`);
@@ -57,15 +57,6 @@ multiplyNums(items.length, items.length, function(product) {
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-  cb(list.filter(listItem => listItem === item).length > 0);
-	function logContains(item, list) {
-    contains(item, list, function(hasItem) {
-      console.log(hasItem 
-        ? `The array contains the item '${item}'.`
-        : `The array does not contain the item '${item}'.`);
-    });
-  }
-  
 }
 
 /* STRETCH PROBLEM */
